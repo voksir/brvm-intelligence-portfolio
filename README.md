@@ -27,10 +27,6 @@ Code      : https://github.com/voksir/BRVM-Intelligence
 | Agent docs EN | `/agents/index.html` |
 | Agent docs FR | `/fr/agents/index.html` |
 
-## Publish on GitHub Pages
-
-See [GITHUB_PAGES.md](GITHUB_PAGES.md) for step-by-step instructions.
-
 ## Structure
 
 ```
