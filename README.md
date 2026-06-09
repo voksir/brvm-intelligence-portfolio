@@ -50,4 +50,4 @@ brvm-intelligence-portfolio/
 
 ## Author
 
-Serge (voksir) — Côte d'Ivoire
+Jean Claude GBAH (voksir) — Côte d'Ivoire
