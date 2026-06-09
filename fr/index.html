@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRVM Intelligence | Analyse boursière multi-agents IA</title>
+  <meta name="description" content="Analyse boursière quotidienne par agents IA pour la BRVM. Construit avec TradingAgents 0.2.x — 7 agents LLM spécialisés, données Supabase réelles, PDF professionnel.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">BRVM <span>Intelligence</span></a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#agents">Agents IA</a></li>
+        <li><a href="#pipeline">Pipeline</a></li>
+        <li><a href="#results">Résultats</a></li>
+        <li><a href="#use-cases">Applications</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li class="lang-switch">
+          <a href="../index.html">EN</a>
+          <a href="index.html" class="active">FR</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <span class="hero-badge">FinTech · Agents IA · TradingAgents 0.2.x · Afrique de l'Ouest</span>
+      <h1>Analyse quotidienne automatisée par agents IA pour la bourse BRVM</h1>
+      <p>
+        <strong>BRVM Intelligence (BAQA)</strong> orchestre <strong>7 agents IA spécialisés</strong>
+        construits avec le framework <strong>TradingAgents 0.2.x</strong> (LangGraph) pour analyser
+        chaque soir les actions de la watchlist après le fixing.
+        Données BRVM réelles via Supabase, débat structuré, et bulletin PDF professionnel avec
+        recommandations <strong>BUY / HOLD / SELL</strong> — en français, en FCFA.
+      </p>
+      <div class="hero-actions">
+        <a href="#results" class="btn btn-primary">Voir les résultats</a>
+        <a href="#agents" class="btn btn-secondary">Explorer les agents IA</a>
+        <a href="https://github.com/voksir/BRVM-Intelligence" class="btn btn-secondary" target="_blank" rel="noopener">Code source</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">À propos du projet</h2>
+      <p class="section-subtitle">
+        La BRVM est la seule bourse régionale partagée par 8 pays d'Afrique de l'Ouest (UEMOA).
+        Ce projet rend l'analyse professionnelle accessible via un pipeline multi-agents automatisé.
+      </p>
+
+      <div class="stats">
+        <div class="stat"><div class="stat-num">7</div><div class="stat-label">Agents IA</div></div>
+        <div class="stat"><div class="stat-num">5</div><div class="stat-label">Tickers watchlist</div></div>
+        <div class="stat"><div class="stat-num">21</div><div class="stat-label">Tests unitaires</div></div>
+        <div class="stat"><div class="stat-num">12/12</div><div class="stat-label">Checklist validée</div></div>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">🤖</div>
+          <h3>Agents IA via TradingAgents 0.2.x</h3>
+          <p>7 agents LLM configurés et orchestrés avec TradingAgents — fondamentaux, technique, actualités, sentiment, puis débat contradictoire.</p>
+          <span class="badge badge-core">Cœur du projet</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>Données BRVM réelles</h3>
+          <p>BOC officiel via Supabase : PER, DNPA, capitalisation, indices sectoriels — tout en FCFA, fixing quotidien.</p>
+          <span class="badge badge-done">Implémenté</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">📄</div>
+          <h3>Bulletin PDF professionnel</h3>
+          <p>Page de garde, indicateurs marché, synthèse des décisions, analyses par ticker, légende BUY/HOLD/SELL en français.</p>
+          <span class="badge badge-done">Implémenté</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚖️</div>
+          <h3>Débat Bull vs Bear</h3>
+          <p>Les chercheurs Haussier et Baissier argumentent à partir des 4 rapports — réduisant les biais avant la recommandation finale.</p>
+          <span class="badge badge-done">Implémenté</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="agents">
+    <div class="container">
+      <h2 class="section-title">Les 7 agents IA — Cœur du système</h2>
+      <p class="section-subtitle">
+        Chaque agent a été conçu, configuré et connecté aux données BRVM réelles via le framework
+        multi-agents <strong>TradingAgents 0.2.x</strong>. Ensemble, ils forment un workflow complet
+        de recherche en investissement.
+      </p>
+
+      <div class="agents-banner">
+        <h3>Pourquoi 7 agents sur TradingAgents ?</h3>
+        <p>
+          TradingAgents fournit la couche d'orchestration LangGraph — j'ai personnalisé les system prompts
+          de chaque agent (français, FCFA, contexte BRVM) et branché un vendor Supabase custom ('brvm').
+          La spécialisation + le débat produisent des recommandations plus équilibrées et auditables.
+        </p>
+        <a href="agents/index.html" class="btn btn-primary">Documentation complète des agents →</a>
+      </div>
+
+      <div class="agent-grid">
+        <article class="agent-card">
+          <div class="agent-num">Agent 1</div>
+          <h3>Analyste Fondamental 📊</h3>
+          <div class="role">Évalue la santé financière d'une action BRVM</div>
+          <ul>
+            <li>PER actuel vs PER sectoriel</li>
+            <li>DNPA (Dividende Net Par Action) en FCFA</li>
+            <li>Rendement net et compartiment boursier</li>
+            <li>Carnet d'ordres et liquidité réelle</li>
+          </ul>
+          <div class="agent-source"><strong>Source :</strong> BOC officiel BRVM</div>
+        </article>
+
+        <article class="agent-card">
+          <div class="agent-num">Agent 2</div>
+          <h3>Analyste Technique 📈</h3>
+          <div class="role">Lit les signaux de prix et de volumes</div>
+          <ul>
+            <li>Historique OHLCV quotidien</li>
+            <li>Tendances 30 / 60 / 90 jours</li>
+            <li>MACD, RSI, moyennes mobiles</li>
+            <li>Beta et volatilité relative</li>
+          </ul>
+          <div class="agent-source"><strong>Source :</strong> Sikafinance via pipeline BRVM</div>
+        </article>
+
+        <article class="agent-card">
+          <div class="agent-num">Agent 3</div>
+          <h3>Analyste Actualités 📰</h3>
+          <div class="role">Interprète l'impact des événements macro</div>
+          <ul>
+            <li>Actualités boursières liées à la société</li>
+            <li>Contexte macro UEMOA : PER marché, prime de risque</li>
+            <li>Indices sectoriels (TEL, FIN, CB, IND, ENE…)</li>
+            <li>Palmarès du jour : hausses et baisses</li>
+          </ul>
+          <div class="agent-source"><strong>Source :</strong> Supabase news + boc_market_summary</div>
+        </article>
+
+        <article class="agent-card">
+          <div class="agent-num">Agent 4</div>
+          <h3>Analyste Sentiment 📡</h3>
+          <div class="role">Capture l'humeur du marché autour du titre</div>
+          <ul>
+            <li>Tendance sentiment des actualités</li>
+            <li>Performance relative vs marché</li>
+            <li>Anomalies de volumes, écarts de cours</li>
+          </ul>
+          <div class="agent-source"><strong>Source :</strong> Agrégation news &amp; données marché</div>
+        </article>
+
+        <article class="agent-card debate">
+          <div class="agent-num">Agents 5 &amp; 6</div>
+          <h3>Chercheur Haussier &amp; Baissier ⚖️</h3>
+          <div class="role">Débat contradictoire à partir des 4 rapports</div>
+          <ul>
+            <li><strong>Haussier :</strong> potentiel de croissance, sous-évaluation</li>
+            <li><strong>Baissier :</strong> risques, surévaluation, liquidité BRVM</li>
+            <li>Débat structuré pour réduire les biais</li>
+          </ul>
+          <div class="agent-source"><strong>Sortie :</strong> champ investment_plan dans le JSON</div>
+        </article>
+
+        <article class="agent-card decision">
+          <div class="agent-num">Agent 7</div>
+          <h3>Trader + Risk Manager 🎯</h3>
+          <div class="role">Synthétise le débat en recommandation finale</div>
+          <ul>
+            <li>Décision finale : <strong>BUY / HOLD / SELL</strong></li>
+            <li>Niveau de confiance</li>
+            <li>Plan d'action détaillé avec justification</li>
+            <li>Risques spécifiques BRVM (liquidité, fixing quotidien)</li>
+          </ul>
+          <div class="agent-source"><strong>Sortie :</strong> final_trade_decision dans le PDF</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pipeline">
+    <div class="container">
+      <h2 class="section-title">Pipeline de traitement</h2>
+      <p class="section-subtitle">Flux de données de Supabase au bulletin PDF professionnel.</p>
+
+      <div class="pipeline">
+        <div class="pipe-step"><strong>📥 Supabase</strong><span>Données BRVM<br>BOC, cours, news</span></div>
+        <span class="pipe-arrow">→</span>
+        <div class="pipe-step"><strong>🔌 Vendor 'brvm'</strong><span>brvm_supabase.py<br>9 fonctions</span></div>
+        <span class="pipe-arrow">→</span>
+        <div class="pipe-step"><strong>🤖 TradingAgents 0.2.x</strong><span>7 agents IA<br>orchestration LangGraph</span></div>
+        <span class="pipe-arrow">→</span>
+        <div class="pipe-step"><strong>💾 État JSON</strong><span>eval_results/<br>full_states_log</span></div>
+        <span class="pipe-arrow">→</span>
+        <div class="pipe-step"><strong>📄 Bulletin PDF</strong><span>report_generator.py<br>BUY/HOLD/SELL</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="container">
+      <h2 class="section-title">Résultats visuels</h2>
+      <p class="section-subtitle">
+        Captures du bulletin réel généré (SNTS.sn — Sonatel, 2026-03-28).
+        Données BRVM réelles — pas de mock.
+      </p>
+
+      <div class="result-block">
+        <div class="result-header">
+          <h3>1. Page de garde — Vue d'ensemble</h3>
+          <div class="result-meta">
+            <span>Composant : report_generator.py → _build_cover_page()</span>
+            <span>Date : 2026-03-28</span>
+            <span>1 ticker analysé · HOLD : 1</span>
+          </div>
+        </div>
+        <div class="result-body">
+          <img src="../assets/results/01-cover.png" alt="Page de garde BRVM Intelligence" loading="lazy">
+          <p class="result-caption">
+            <strong>Ce que vous voyez :</strong> La page de garde du bulletin quotidien, générée automatiquement après le cycle d'analyse des 7 agents IA.<br>
+            <strong>Pourquoi c'est important :</strong> Résumé immédiat — tickers analysés et compteurs BUY / HOLD / SELL — sans lire tout le rapport.
+          </p>
+        </div>
+      </div>
+
+      <div class="result-block">
+        <div class="result-header">
+          <h3>2. Indicateurs marché BRVM — Données Supabase</h3>
+          <div class="result-meta">
+            <span>Source : boc_market_summary</span>
+            <span>BRVM Composite YTD : 17,48 %</span>
+            <span>Capitalisation : 15,6 T XOF</span>
+          </div>
+        </div>
+        <div class="result-body">
+          <img src="../assets/results/02-market-overview.png" alt="Tableau indicateurs marché BRVM" loading="lazy">
+          <p class="result-caption">
+            <strong>Ce que vous voyez :</strong> Indicateurs marché BRVM en temps réel depuis Supabase (indice composite, capitalisation, PER moyen, titres cotés).<br>
+            <strong>Pourquoi c'est important :</strong> Chaque recommandation est contextualisée par des données UEMOA réelles — pas une sortie LLM générique.
+          </p>
+        </div>
+      </div>
+
+      <div class="result-block">
+        <div class="result-header">
+          <h3>3. Analyse technique + Décision HOLD (Agents 2 &amp; 7)</h3>
+          <div class="result-meta">
+            <span>Ticker : SNTS.sn (Sonatel)</span>
+            <span>Indicateurs : SMA, MACD, RSI, Bollinger</span>
+          </div>
+        </div>
+        <div class="result-body">
+          <img src="../assets/results/03-technical-decision.png" alt="Analyse technique SNTS.sn avec décision HOLD" loading="lazy">
+          <p class="result-caption">
+            <strong>Ce que vous voyez :</strong> Sortie de l'agent Analyste Technique (indicateurs) et de l'agent Trader (décision HOLD pour Sonatel).<br>
+            <strong>Pourquoi c'est important :</strong> Collaboration bout-en-bout entre agents IA — analyse spécialisée menant à une recommandation claire et colorée.
+          </p>
+        </div>
+      </div>
+
+      <div class="result-block">
+        <div class="result-header">
+          <h3>4. Sentiment &amp; Actualités (Agents 3 &amp; 4)</h3>
+          <div class="result-meta">
+            <span>Champs : sentiment_report + news_report</span>
+            <span>Langue : Français</span>
+          </div>
+        </div>
+        <div class="result-body">
+          <img src="../assets/results/04-sentiment-news.png" alt="Sections sentiment et actualités" loading="lazy">
+          <p class="result-caption">
+            <strong>Ce que vous voyez :</strong> Rapports des agents Sentiment et Actualités — en français, avec contexte macro UEMOA et couverture par société.<br>
+            <strong>Pourquoi c'est important :</strong> Les agents vont au-delà des prix pour interpréter l'actualité et l'humeur du marché — compétence clé en conception d'agents IA.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="use-cases">
+    <div class="container">
+      <h2 class="section-title">Domaines d'application</h2>
+      <p class="section-subtitle">
+        BRVM Intelligence répond à des cas d'usage concrets dans l'écosystème financier UEMOA —
+        des investisseurs particuliers aux SGI, la diaspora et la recherche académique.
+      </p>
+
+      <div class="use-cases-grid">
+        <article class="use-case-card">
+          <h3>👤 Investisseurs particuliers</h3>
+          <p>Recevoir chaque soir un bulletin d'analyse clair en français. Prendre des décisions éclairées sur la BRVM sans être analyste financier, et découvrir les opportunités de valeur identifiées par les agents.</p>
+        </article>
+        <article class="use-case-card">
+          <h3>🏦 SGI (Intermédiaires boursiers)</h3>
+          <p>Multiplier la capacité d'analyse sans recruter. Produire des notes de recherche pour leurs clients institutionnels et détecter automatiquement les anomalies de marché.</p>
+        </article>
+        <article class="use-case-card">
+          <h3>🌍 Diaspora ivoirienne &amp; UEMOA</h3>
+          <p>Investir sur la BRVM depuis l'étranger avec des analyses à jour. Comprendre le marché UEMOA — FCFA, fixing quotidien, dynamiques sectorielles — sans expertise financière préalable.</p>
+        </article>
+        <article class="use-case-card">
+          <h3>🎓 Recherche académique</h3>
+          <p>Explorer 15 ans de données BRVM (2010–2026) pour des thèses et publications. Backtester des stratégies d'investissement sur le marché africain.</p>
+        </article>
+        <article class="use-case-card">
+          <h3>📱 FinTech &amp; WealthTech</h3>
+          <p>Intégrer une analyse BRVM automatisée dans des néobanques, robo-advisors ou applications mobiles d'investissement. Sortie JSON structurée et bulletins PDF prêts pour l'intégration API et les tableaux de bord clients.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="container">
+      <h2 class="section-title">Stack technique</h2>
+      <div class="pills">
+        <span class="pill">Python 3.10+</span>
+        <span class="pill">TradingAgents 0.2.x</span>
+        <span class="pill">LangGraph</span>
+        <span class="pill">OpenRouter / gpt-4o-mini</span>
+        <span class="pill">Supabase PostgreSQL</span>
+        <span class="pill">ReportLab</span>
+        <span class="pill">Multi-Agents IA</span>
+        <span class="pill">FinTech</span>
+        <span class="pill">BRVM / UEMOA</span>
+        <span class="pill">pytest</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <strong>BRVM Intelligence</strong> — Bulletin d'Analyse Quotidien Automatisé (BAQA)<br>
+        Portfolio : <a href="https://voksir.github.io/brvm-intelligence-portfolio/">voksir.github.io/brvm-intelligence-portfolio</a><br>
+        Code source : <a href="https://github.com/voksir/BRVM-Intelligence" target="_blank" rel="noopener">github.com/voksir/BRVM-Intelligence</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
