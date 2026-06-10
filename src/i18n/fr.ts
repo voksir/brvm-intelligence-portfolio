@@ -187,9 +187,8 @@ export const home: HomeContent = {
   footer: {
     lines: [
       "<strong>BRVM Intelligence</strong> — Bulletin d'Analyse Quotidien Automatisé (BAQA)",
-      'Portfolio : <a href="https://voksir.github.io/brvm-intelligence-portfolio/">voksir.github.io/brvm-intelligence-portfolio</a>',
       'Code source : <a href="https://github.com/voksir/BRVM-Intelligence" target="_blank" rel="noopener">github.com/voksir/BRVM-Intelligence</a>',
-      "Auteur : Jean Claude GBAH (voksir) — Côte d'Ivoire",
+      "Auteur : JCG (voksir) — Côte d'Ivoire",
     ],
   },
 };
