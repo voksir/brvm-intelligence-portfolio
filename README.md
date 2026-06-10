@@ -4,13 +4,6 @@ Visual portfolio for the **BRVM Intelligence (BAQA)** project — automated dail
 
 > This is the **presentation repo**. The code lives separately.
 
-## Links for your CV
-
-```
-Portfolio : https://voksir.github.io/brvm-intelligence-portfolio/
-Code      : https://github.com/voksir/BRVM-Intelligence
-```
-
 ## What this site shows
 
 - **7 AI agents** — fundamentals, technical, news, sentiment, bull/bear debate, trader + risk manager
