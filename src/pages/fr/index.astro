@@ -1,0 +1,11 @@
+---
+import HomePage from '@/components/HomePage.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { home } from '@/i18n/fr';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout lang="fr" title={home.meta.title} description={home.meta.description}>
+  <HomePage locale="fr" homeHref={`${base}fr/`} agentsHref={`${base}fr/agents/`} content={home} />
+</BaseLayout>

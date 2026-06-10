@@ -1,0 +1,200 @@
+---
+import Nav from '@/components/Nav.astro';
+import type { HomeContent, Locale } from '@/i18n/types';
+import { asset } from '@/utils/asset';
+
+interface Props {
+  locale: Locale;
+  homeHref: string;
+  agentsHref: string;
+  content: HomeContent;
+}
+
+const { locale, homeHref, agentsHref, content: t } = Astro.props;
+---
+
+<Nav locale={locale} homeHref={homeHref} links={t.nav} variant="home" />
+
+<header class="hero">
+  <div class="container">
+    <span class="hero-badge">{t.hero.badge}</span>
+    <h1>{t.hero.title}</h1>
+    <p set:html={t.hero.text} />
+    <div class="hero-actions">
+      <a href="#results" class="btn btn-primary">{t.hero.ctaResults}</a>
+      <a href="#agents" class="btn btn-secondary">{t.hero.ctaAgents}</a>
+      <a href="https://github.com/voksir/BRVM-Intelligence" class="btn btn-secondary" target="_blank" rel="noopener">{t.hero.ctaSource}</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">{t.about.title}</h2>
+    <p class="section-subtitle">{t.about.subtitle}</p>
+    <div class="stats">
+      {t.about.stats.map((stat) => (
+        <div class="stat">
+          <div class="stat-num">{stat.num}</div>
+          <div class="stat-label">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+    <div class="cards">
+      {t.about.cards.map((card) => (
+        <div class="card">
+          <div class="card-icon">{card.icon}</div>
+          <h3>{card.title}</h3>
+          <p>{card.text}</p>
+          <span class={`badge ${card.badgeClass}`}>{card.badge}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section id="agents">
+  <div class="container">
+    <h2 class="section-title">{t.agents.title}</h2>
+    <p class="section-subtitle" set:html={t.agents.subtitle} />
+    <div class="agents-banner">
+      <h3>{t.agents.bannerTitle}</h3>
+      <p>{t.agents.bannerText}</p>
+      <a href={agentsHref} class="btn btn-primary">{t.agents.bannerCta}</a>
+    </div>
+    <div class="agent-grid">
+      {t.agents.items.map((agent) => (
+        <article class:list={['agent-card', agent.variant]}>
+          <div class="agent-num">{agent.num}</div>
+          <h3>{agent.title}</h3>
+          <div class="role">{agent.role}</div>
+          <ul>
+            {agent.items.map((item) => <li set:html={item} />)}
+          </ul>
+          <div class="agent-source" set:html={agent.source} />
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section id="pipeline">
+  <div class="container">
+    <h2 class="section-title">{t.pipeline.title}</h2>
+    <p class="section-subtitle">{t.pipeline.subtitle}</p>
+    <div class="pipeline">
+      {t.pipeline.steps.map((step, i) => (
+        <>
+          {i > 0 && <span class="pipe-arrow">→</span>}
+          <div class="pipe-step">
+            <strong>{step.title}</strong>
+            <span set:html={step.detail} />
+          </div>
+        </>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <div class="container">
+    <h2 class="section-title">{t.results.title}</h2>
+    <p class="section-subtitle">{t.results.subtitle}</p>
+    {t.results.items.map((item) => (
+      <div class="result-block">
+        <div class="result-header">
+          <h3>{item.title}</h3>
+          <div class="result-meta">
+            {item.meta.map((m) => <span>{m}</span>)}
+          </div>
+        </div>
+        <div class="result-body">
+          <img src={asset(item.image)} alt={item.imageAlt} loading="lazy" />
+          <p class="result-caption" set:html={item.caption} />
+          {item.metrics && (
+            <div class="result-metrics">
+              {item.metrics.map((metric) => (
+                <span class:list={['metric', metric.class]}>
+                  <span set:html={metric.text} />
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<section id="use-cases">
+  <div class="container">
+    <h2 class="section-title">{t.useCases.title}</h2>
+    <p class="section-subtitle">{t.useCases.subtitle}</p>
+    <div class="use-cases-grid">
+      {t.useCases.items.map((uc) => (
+        <article class="use-case-card">
+          <h3>{uc.title}</h3>
+          <p>{uc.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+{
+  t.components && (
+    <section id="components">
+      <div class="container">
+        <h2 class="section-title">{t.components.title}</h2>
+        <p class="section-subtitle">{t.components.subtitle}</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Type</th>
+                <th>Role</th>
+                <th>Output</th>
+              </tr>
+            </thead>
+            <tbody>
+              {t.components.rows.map((row) => (
+                <tr>
+                  <td>{row.name}</td>
+                  <td>{row.type}</td>
+                  <td>{row.role}</td>
+                  <td class={row.outputClass}>{row.output}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<section id="stack">
+  <div class="container">
+    <h2 class="section-title">{t.stack.title}</h2>
+    {t.stack.subtitle && <p class="section-subtitle">{t.stack.subtitle}</p>}
+    <div class="pills">
+      {t.stack.pills.map((pill) => (
+        <span class="pill">{pill}</span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>
+      {t.footer.lines.map((line, i) => (
+        <>
+          {i > 0 && <br />}
+          <span set:html={line} />
+        </>
+      ))}
+    </p>
+  </div>
+</footer>

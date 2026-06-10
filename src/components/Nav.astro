@@ -1,0 +1,54 @@
+---
+import type { Locale, NavLink } from '@/i18n/types';
+
+interface Props {
+  locale: Locale;
+  homeHref: string;
+  links: NavLink[];
+  variant?: 'home' | 'agents';
+}
+
+const { locale, homeHref, links, variant = 'home' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const enHome = base;
+const frHome = `${base}fr/`;
+const enAgents = `${base}agents/`;
+const frAgents = `${base}fr/agents/`;
+---
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href={homeHref} class="logo">BRVM <span>Intelligence</span></a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <ul class="nav-links">
+      {
+        links.map((link) => {
+          const href =
+            variant === 'agents' && link.href.startsWith('#')
+              ? `${homeHref}${link.href}`
+              : link.href;
+          return (
+            <li>
+              <a href={href}>{link.label}</a>
+            </li>
+          );
+        })
+      }
+      <li class="lang-switch">
+        {
+          locale === 'en' ? (
+            <>
+              <a href={variant === 'home' ? enHome : enAgents} class="active">EN</a>
+              <a href={variant === 'home' ? frHome : frAgents}>FR</a>
+            </>
+          ) : (
+            <>
+              <a href={variant === 'home' ? enHome : enAgents}>EN</a>
+              <a href={variant === 'home' ? frHome : frAgents} class="active">FR</a>
+            </>
+          )
+        }
+      </li>
+    </ul>
+  </div>
+</nav>

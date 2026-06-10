@@ -1,4 +1,4 @@
-# BRVM Intelligence — Portfolio
+# BRVM Intelligence (AI Agents) — Portfolio
 
 Visual portfolio for the **BRVM Intelligence (BAQA)** project — automated daily stock analysis for the West African BRVM market using **7 specialized AI agents**.
 
@@ -22,28 +22,11 @@ Code      : https://github.com/voksir/BRVM-Intelligence
 
 | Page | URL |
 |------|-----|
-| English (default) | `/index.html` |
-| Français | `/fr/index.html` |
-| Agent docs EN | `/agents/index.html` |
-| Agent docs FR | `/fr/agents/index.html` |
-
-## Structure
-
-```
-brvm-intelligence-portfolio/
-├── index.html              # English homepage
-├── fr/index.html           # French homepage
-├── agents/index.html       # Full agent documentation (EN)
-├── fr/agents/index.html    # Full agent documentation (FR)
-├── assets/
-│   ├── css/style.css
-│   ├── js/main.js
-│   └── results/            # PDF screenshots
-├── .nojekyll
-├── README.md
-└── GITHUB_PAGES.md
-```
+| English (default) | `/` |
+| Français | `/fr/` |
+| Agent docs EN | `/agents/` |
+| Agent docs FR | `/fr/agents/` |
 
 ## Author
 
-Jean Claude GBAH (voksir) — Côte d'Ivoire
+JCG (voksir) — Côte d'Ivoire

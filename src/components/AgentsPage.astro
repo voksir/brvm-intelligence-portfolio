@@ -1,0 +1,78 @@
+---
+import Nav from '@/components/Nav.astro';
+import type { AgentsContent, Locale } from '@/i18n/types';
+import { asset } from '@/utils/asset';
+
+interface Props {
+  locale: Locale;
+  homeHref: string;
+  content: AgentsContent;
+}
+
+const { locale, homeHref, content: t } = Astro.props;
+---
+
+<Nav locale={locale} homeHref={homeHref} links={t.nav} variant="agents" />
+
+<header class="hero" style="padding: 3rem 0 2rem;">
+  <div class="container">
+    <h1>{t.hero.title}</h1>
+    <p>{t.hero.text}</p>
+    <div class="hero-actions" style="margin-top: 1.25rem;">
+      <a href="#cli-workflow" class="btn btn-primary">{t.hero.ctaCli}</a>
+      <a href={homeHref} class="btn btn-secondary">{t.hero.ctaBack}</a>
+    </div>
+  </div>
+</header>
+
+<section id="cli-workflow">
+  <div class="container">
+    <div class="cli-banner">
+      <h2>{t.cli.title}</h2>
+      <p set:html={t.cli.text} />
+    </div>
+    {t.cli.steps.map((step) => (
+      <div class="result-block">
+        <div class="result-header">
+          <span class="cli-step-num">{step.step}</span>
+          <h3 set:html={step.title} />
+          <div class="result-meta">
+            {step.meta.map((m) => <span>{m}</span>)}
+          </div>
+        </div>
+        <div class="result-body">
+          <img class="cli-shot" src={asset(step.image)} alt={step.imageAlt} loading="lazy" />
+          <p class="result-caption" set:html={step.caption} />
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="agent-grid" style="grid-template-columns: 1fr;">
+      {t.details.map((agent) => (
+        <article class:list={['agent-card', agent.variant]}>
+          <div class="agent-num">{agent.num}</div>
+          <h3>{agent.title}</h3>
+          <div class="role">{agent.role}</div>
+          {agent.intro && <p style="color: var(--text-muted); font-size: 0.9rem;">{agent.intro}</p>}
+          <ul>
+            {agent.items.map((item) => <li set:html={item} />)}
+          </ul>
+          <div class="agent-source" set:html={agent.source} />
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>
+      <a href={homeHref}>{t.footer.back}</a> ·{' '}
+      <a href="https://github.com/voksir/BRVM-Intelligence" target="_blank" rel="noopener">{t.footer.source}</a>
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,11 @@
+---
+import AgentsPage from '@/components/AgentsPage.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { agents } from '@/i18n/fr';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout lang="fr" title={agents.meta.title}>
+  <AgentsPage locale="fr" homeHref={`${base}fr/`} content={agents} />
+</BaseLayout>
