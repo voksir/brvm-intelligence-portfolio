@@ -182,7 +182,7 @@ export const home: HomeContent = {
   },
   stack: {
     title: 'Stack technique',
-    pills: ['Python 3.10+', 'TradingAgents 0.2.x', 'LangGraph', 'OpenRouter / gpt-4o-mini', 'Supabase PostgreSQL', 'ReportLab', 'Multi-Agents IA', 'FinTech', 'BRVM / UEMOA', 'pytest', 'Astro'],
+    pills: ['TradingAgents', 'LangGraph', 'PostgreSQL','Multi-Agent AI', 'FinTech', 'Pandas'],
   },
   footer: {
     lines: [

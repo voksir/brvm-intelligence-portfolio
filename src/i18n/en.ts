@@ -204,7 +204,7 @@ export const home: HomeContent = {
   stack: {
     title: 'Tech Stack',
     subtitle: 'Technologies and skills demonstrated by this project.',
-    pills: ['Python 3.10+', 'TradingAgents 0.2.x', 'LangGraph', 'OpenRouter / gpt-4o-mini', 'Supabase PostgreSQL', 'ReportLab', 'Multi-Agent AI', 'FinTech', 'BRVM / UEMOA', 'pytest', 'Loguru', 'Pandas', 'Astro'],
+    pills: ['TradingAgents', 'LangGraph', 'PostgreSQL','Multi-Agent AI', 'FinTech', 'Pandas'],
   },
   footer: {
     lines: [
