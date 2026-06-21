@@ -15,8 +15,8 @@ Visual portfolio for the **BRVM Intelligence (BAQA)** project — automated dail
 
 | Page | URL |
 |------|-----|
-| English (default) | `/` |
-| Français | `/fr/` |
+| English (default) | `https://voksir.github.io/brvm-intelligence-portfolio/` |
+| Français | `https://voksir.github.io/brvm-intelligence-portfolio/fr/` |
 | Agent docs EN | `/agents/` |
 | Agent docs FR | `/fr/agents/` |
 
